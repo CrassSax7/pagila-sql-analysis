@@ -63,14 +63,22 @@ WITH store_inventory AS (
     JOIN inventory i ON s.store_id = i.store_id
     JOIN film f ON i.film_id = f.film_id
     GROUP BY s.store_id, f.title
+),
+ranked_inventory AS (
+    SELECT
+        store_id,
+        title,
+        copies_available,
+        RANK() OVER (
+            PARTITION BY store_id
+            ORDER BY copies_available DESC
+        ) AS rank_per_store
+    FROM store_inventory
 )
-SELECT
-    store_id,
-    title,
-    copies_available,
-    RANK() OVER (PARTITION BY store_id ORDER BY copies_available DESC) AS rank_per_store
-FROM store_inventory
+SELECT *
+FROM ranked_inventory
 WHERE rank_per_store <= 5;
+
 
 -- ========================================================
 -- 6) Payments Trend by Month
