@@ -105,15 +105,44 @@ All required data is included in the `/data` directory.
 Clone → Install → Run → Query.
 
 No external database setup required.
+
 ---
-## ⚙️ How to Run (Bash / Terminal)
-```
+
+## 🚀 How to Run (Mac - must have sqlite3 installed)
+
+```bash
 git clone https://github.com/CrassSax7/pagila-sql-analysis.git
 cd pagila-sql-analysis
 
-pip install -r requirements.txt
+python3 -m venv venv
+source venv/bin/activate
+
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+
 python scripts/load_pagila.py
+
 sqlite3 pagila.db < pagila_analysis_sqlite.sql
+```
+
+---
+
+## 🚀 How to Run (Windows - must have sqlite3 installed)
+
+```bash
+git clone https://github.com/CrassSax7/pagila-sql-analysis.git
+cd pagila-sql-analysis
+
+python -m venv venv
+venv\Scripts\activate
+
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+
+python scripts\load_pagila.py
+
+sqlite3 pagila.db < pagila_analysis_sqlite.sql
+```
 
 
 
