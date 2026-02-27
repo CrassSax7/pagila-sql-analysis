@@ -152,7 +152,7 @@ python scripts\load_pagila.py
 # 6a. Ensure SQLite CLI is installed and in PATH, then run (PowerShell):
 Get-Content pagila_analysis_sqlite.sql | sqlite3 pagila.db
 # 6b. Or in cmd.exe:
-# sqlite3 pagila.db < pagila_analysis_sqlite.sql
+sqlite3 pagila.db < pagila_analysis_sqlite.sql
 ```
 
 
