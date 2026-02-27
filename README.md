@@ -37,9 +37,9 @@ The objective is to demonstrate practical SQL proficiency across normalized rela
 This project highlights how structured SQL querying can generate actionable business insights from normalized enterprise-style databases.
 
 ---
-
+```markdown
 ## 📁 Repository Structure
-
+```text
 pagila-sql-analysis/
 │
 ├── data/                  
@@ -58,6 +58,7 @@ pagila-sql-analysis/
 ├── pagila_analysis_sqlite.sql  
 ├── requirements.txt
 └── README.md
+```
 
 ---
 
