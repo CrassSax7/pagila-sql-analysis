@@ -130,18 +130,29 @@ sqlite3 pagila.db < pagila_analysis_sqlite.sql
 ## 🚀 How to Run (Windows - must have sqlite3 installed)
 
 ```bash
+# 1. Clone repo
 git clone https://github.com/CrassSax7/pagila-sql-analysis.git
 cd pagila-sql-analysis
 
+# 2. Create virtual environment
 python -m venv venv
-venv\Scripts\activate
 
+# 3a. If using PowerShell:
+venv\Scripts\Activate.ps1
+# 3b. If using Command Prompt:
+# venv\Scripts\activate.bat
+
+# 4. Install dependencies
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 
+# 5. Load initial Python data
 python scripts\load_pagila.py
 
-sqlite3 pagila.db < pagila_analysis_sqlite.sql
+# 6a. Ensure SQLite CLI is installed and in PATH, then run (PowerShell):
+Get-Content pagila_analysis_sqlite.sql | sqlite3 pagila.db
+# 6b. Or in cmd.exe:
+# sqlite3 pagila.db < pagila_analysis_sqlite.sql
 ```
 
 
